@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Epn-BD-SX3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bUq-2W-XIO">
+            <objects>
+                <tabBarController id="Epn-BD-SX3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yYE-Jq-uaS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fDD-kp-Tm0" kind="relationship" relationship="viewControllers" id="GJT-FI-JzK"/>
+                        <segue destination="53G-hA-e32" kind="relationship" relationship="viewControllers" id="0B6-80-SNm"/>
+                        <segue destination="QLp-r2-f4L" kind="relationship" relationship="viewControllers" id="KNK-mU-UTw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRG-fS-os7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106" y="-358"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="c6f-Er-6rh">
+            <objects>
+                <viewController id="fDD-kp-Tm0" customClass="HomePlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MCr-h2-S4a"/>
+                        <viewControllerLayoutGuide type="bottom" id="9tY-qI-5st"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="51R-0E-BIx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="7Kc-3y-Fgj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0p-Jd-liN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="-1038"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Ocr-N4-L2O">
+            <objects>
+                <viewController id="53G-hA-e32" customClass="MusicMapViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SAv-nR-qWY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rd2-F9-tJJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ssh-6E-rdd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iDx-G9-6tE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iDx-G9-6tE" secondAttribute="trailing" id="2j1-3d-jWK"/>
+                            <constraint firstItem="iDx-G9-6tE" firstAttribute="bottom" secondItem="Rd2-F9-tJJ" secondAttribute="top" id="DoT-3V-rEW"/>
+                            <constraint firstItem="iDx-G9-6tE" firstAttribute="leading" secondItem="Ssh-6E-rdd" secondAttribute="leading" id="XI2-Nh-K8N"/>
+                            <constraint firstItem="iDx-G9-6tE" firstAttribute="top" secondItem="SAv-nR-qWY" secondAttribute="bottom" id="myA-6A-5Xd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="D00-CQ-hHz"/>
+                    <connections>
+                        <outlet property="mapView" destination="iDx-G9-6tE" id="5f6-UE-mfA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ss5-P1-PHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.80000000000001" y="-358.4707646176912"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="G5Y-Jc-FNk">
+            <objects>
+                <viewController id="QLp-r2-f4L" customClass="MusicListViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="czd-8Z-1aW"/>
+                        <viewControllerLayoutGuide type="bottom" id="fs3-Yd-T69"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0dS-cq-b8O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7p-U7-SpG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QLp-r2-f4L" id="hE2-ln-mtS"/>
+                                    <outlet property="delegate" destination="QLp-r2-f4L" id="EZa-KE-3oa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c7p-U7-SpG" firstAttribute="bottom" secondItem="fs3-Yd-T69" secondAttribute="top" id="6Il-yJ-e1k"/>
+                            <constraint firstItem="c7p-U7-SpG" firstAttribute="top" secondItem="czd-8Z-1aW" secondAttribute="bottom" id="FBC-d3-M4w"/>
+                            <constraint firstItem="c7p-U7-SpG" firstAttribute="leading" secondItem="0dS-cq-b8O" secondAttribute="leading" id="QuW-Pi-OC4"/>
+                            <constraint firstAttribute="trailing" secondItem="c7p-U7-SpG" secondAttribute="trailing" id="ig2-Gk-h2q"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="t2L-qU-8KV"/>
+                    <connections>
+                        <outlet property="tableView" destination="c7p-U7-SpG" id="3DH-D0-LFT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AnA-NB-QgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.80000000000001" y="403.44827586206901"/>
+        </scene>
+    </scenes>
+</document>
