@@ -13,15 +13,27 @@ import CoreLocation
 class MusicMapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    var locationManager: LocationManager!
     
+    let locationManager = CLLocationManager()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager = LocationManager.sharedInstance
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let span = MKCoordinateSpanMake(0.2, 0.2)
+        let myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegionMake(myLocation, span)
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
     }
     
     

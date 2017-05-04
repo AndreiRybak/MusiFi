@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MusicListViewController: UIViewController, UITableViewDelegate {
+class MusicListViewController: UIViewController, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     struct Constants {
         static let cellNibName = "MusicListTableCell"
         static let cellReuseIdentifier = "musicListCell"
@@ -23,6 +23,10 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 90.0
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
     }
 
 }

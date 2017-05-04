@@ -173,6 +173,7 @@
 				TargetAttributes = {
 					07D539D81E88F60C00BF6C1C = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 2F6JP88E44;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -392,6 +393,7 @@
 			baseConfigurationReference = 7263065D6234DE54C1A84663 /* Pods-MusiFi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2F6JP88E44;
 				INFOPLIST_FILE = MusiFi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ARAR.MusiFi;
@@ -405,6 +407,7 @@
 			baseConfigurationReference = F7B0256F3A53D564CC50FBE0 /* Pods-MusiFi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2F6JP88E44;
 				INFOPLIST_FILE = MusiFi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ARAR.MusiFi;

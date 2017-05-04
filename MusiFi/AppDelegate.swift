@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    let locationManager = LocationManager.sharedInstance
+    let locationManger = LocationManager.sharedInstance
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -36,7 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        _ = locationManager.getCurrentLocation()
+        locationManger.requestAlwaysAuthorization()
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
