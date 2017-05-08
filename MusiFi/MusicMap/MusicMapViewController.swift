@@ -35,7 +35,5 @@ class MusicMapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
     }
-    
-    
-    
+
 }

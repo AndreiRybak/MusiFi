@@ -17,7 +17,6 @@
 		07E5BCAD1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCAB1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift */; };
 		07E5BCAE1E89049C00292EE4 /* MusicListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E5BCAC1E89049C00292EE4 /* MusicListTableCell.xib */; };
 		07E5BCB01E89113800292EE4 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCAF1E89113800292EE4 /* SessionController.swift */; };
-		07E5BCB21E8915B400292EE4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCB11E8915B400292EE4 /* LocationManager.swift */; };
 		07E5BCB41E892B7E00292EE4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E5BCB31E892B7E00292EE4 /* Alamofire.framework */; };
 		07E5BCB61E89834E00292EE4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E5BCB51E89834E00292EE4 /* CoreLocation.framework */; };
 		DC7292E81E059BA428D32DC2 /* Pods_MusiFi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F91177FB6EDDE56635A86D6 /* Pods_MusiFi.framework */; };
@@ -36,7 +35,6 @@
 		07E5BCAB1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		07E5BCAC1E89049C00292EE4 /* MusicListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicListTableCell.xib; sourceTree = "<group>"; };
 		07E5BCAF1E89113800292EE4 /* SessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
-		07E5BCB11E8915B400292EE4 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		07E5BCB31E892B7E00292EE4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MusiFi-gizpeuqmeukzxhgxleduwduuyoay/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		07E5BCB51E89834E00292EE4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7263065D6234DE54C1A84663 /* Pods-MusiFi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusiFi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusiFi/Pods-MusiFi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				07D539E31E88F60C00BF6C1C /* Assets.xcassets */,
 				07D539E51E88F60C00BF6C1C /* LaunchScreen.storyboard */,
 				07D539E81E88F60C00BF6C1C /* Info.plist */,
-				07E5BCB11E8915B400292EE4 /* LocationManager.swift */,
 				07E5BCAF1E89113800292EE4 /* SessionController.swift */,
 			);
 			path = MusiFi;
@@ -267,7 +264,6 @@
 				07E5BCA81E88FF1F00292EE4 /* ShareViewController.swift in Sources */,
 				07E5BCAA1E88FF1F00292EE4 /* MusicMapViewController.swift in Sources */,
 				07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */,
-				07E5BCB21E8915B400292EE4 /* LocationManager.swift in Sources */,
 				07E5BCAD1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift in Sources */,
 				07E5BCB01E89113800292EE4 /* SessionController.swift in Sources */,
 				07E5BCA91E88FF1F00292EE4 /* MusicListViewController.swift in Sources */,

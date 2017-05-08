@@ -8,23 +8,30 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 import MediaPlayer
 
-class ShareViewController: UIViewController {
-    
-    var url:NSURL!
-    let audioInfo = MPNowPlayingInfoCenter.default()
-    var nowPlayingInfo:[String:Any] = [:]
+class ShareViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBAction func shareButtonPressed(_ sender: UIButton) {
-        fetchMP3Info()
-    }
+    var nowPlayingInfo:[String:Any] = [:]
+    
+    fileprivate let locationManager = CLLocationManager()
+    fileprivate var latitude: Double = 0.0
+    fileprivate var longitude: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
     }
+
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        fetchMP3Info()
+        writeLocation()
+    }
+
     
-    func fetchMP3Info() {
+    fileprivate func fetchMP3Info() {
         
         let player = MPMusicPlayerController()
         let playerItem = player.nowPlayingItem
@@ -41,5 +48,18 @@ class ShareViewController: UIViewController {
             nowPlayingInfo["title"] = title
         }
         
+    }
+    
+    
+    fileprivate func writeLocation() {
+        nowPlayingInfo["latitude"] = self.latitude
+        nowPlayingInfo["longitude"] = self.longitude
+    }
+    
+    
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        self.latitude = location.coordinate.latitude
+        self.longitude = location.coordinate.longitude
     }
 }
