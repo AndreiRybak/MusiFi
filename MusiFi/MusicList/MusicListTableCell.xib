@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="348" height="91"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="348" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="348" height="90.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-Wm-hkG">
@@ -53,6 +53,11 @@
                     <constraint firstItem="DSh-LE-rt5" firstAttribute="leading" secondItem="Dbc-Wm-hkG" secondAttribute="trailing" constant="10" id="tRd-oo-jhE"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="authorLabel" destination="rhn-wK-4Xg" id="EM9-v9-hbj"/>
+                <outlet property="trackImage" destination="Dbc-Wm-hkG" id="sf7-nL-h8j"/>
+                <outlet property="trackNameLabel" destination="DSh-LE-rt5" id="ljf-dX-Sva"/>
+            </connections>
             <point key="canvasLocation" x="48" y="82.5"/>
         </tableViewCell>
     </objects>

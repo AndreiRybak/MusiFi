@@ -25,9 +25,11 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Please</string>
+	<string></string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string></string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Please</string>
+	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

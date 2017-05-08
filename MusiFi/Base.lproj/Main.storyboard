@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Epn-BD-SX3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Epn-BD-SX3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +30,7 @@
         <!--Item-->
         <scene sceneID="c6f-Er-6rh">
             <objects>
-                <viewController id="fDD-kp-Tm0" customClass="HomePlayerViewController" sceneMemberID="viewController">
+                <viewController id="fDD-kp-Tm0" customClass="ShareViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MCr-h2-S4a"/>
                         <viewControllerLayoutGuide type="bottom" id="9tY-qI-5st"/>
@@ -39,7 +38,19 @@
                     <view key="view" contentMode="scaleToFill" id="51R-0E-BIx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3p-6F-24X">
+                                <rect key="frame" x="167" y="318" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="fDD-kp-Tm0" eventType="touchUpInside" id="jT2-YR-5OL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="r3p-6F-24X" firstAttribute="centerY" secondItem="51R-0E-BIx" secondAttribute="centerY" id="EHA-ja-BfW"/>
+                            <constraint firstItem="r3p-6F-24X" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="aGH-WF-BWl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7Kc-3y-Fgj"/>
                 </viewController>

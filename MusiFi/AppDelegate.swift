@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import MediaPlayer
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         locationManger.requestAlwaysAuthorization()
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if #available(iOS 9.3, *) {
+            if (MPMediaLibrary.authorizationStatus() != .authorized) {
+                MPMediaLibrary.requestAuthorization({ (status) in
+                    print(status)
+                })
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         
     }
 

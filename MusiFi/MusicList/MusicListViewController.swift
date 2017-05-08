@@ -25,8 +25,8 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-
+    override func viewWillAppear(_ animated: Bool) {
+        //REQUEST FOR ITEMS
     }
 
 }
@@ -38,11 +38,13 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 10 //NUMBER OF ITEMS FROM REQUEST
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath)
+        //CONFIGURE CELL
+        cell.imageView?.image = UIImage(named: "default_placeholder")
         return cell
     }
     

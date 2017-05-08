@@ -11,7 +11,7 @@
 		07D539E21E88F60C00BF6C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E01E88F60C00BF6C1C /* Main.storyboard */; };
 		07D539E41E88F60C00BF6C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E31E88F60C00BF6C1C /* Assets.xcassets */; };
 		07D539E71E88F60C00BF6C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E51E88F60C00BF6C1C /* LaunchScreen.storyboard */; };
-		07E5BCA81E88FF1F00292EE4 /* HomePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA31E88FF1F00292EE4 /* HomePlayerViewController.swift */; };
+		07E5BCA81E88FF1F00292EE4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA31E88FF1F00292EE4 /* ShareViewController.swift */; };
 		07E5BCA91E88FF1F00292EE4 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA51E88FF1F00292EE4 /* MusicListViewController.swift */; };
 		07E5BCAA1E88FF1F00292EE4 /* MusicMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA71E88FF1F00292EE4 /* MusicMapViewController.swift */; };
 		07E5BCAD1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCAB1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift */; };
@@ -30,7 +30,7 @@
 		07D539E31E88F60C00BF6C1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07D539E61E88F60C00BF6C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07D539E81E88F60C00BF6C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07E5BCA31E88FF1F00292EE4 /* HomePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePlayerViewController.swift; sourceTree = "<group>"; };
+		07E5BCA31E88FF1F00292EE4 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		07E5BCA51E88FF1F00292EE4 /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		07E5BCA71E88FF1F00292EE4 /* MusicMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicMapViewController.swift; sourceTree = "<group>"; };
 		07E5BCAB1E89049C00292EE4 /* MusicListTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListTableCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		07D539DB1E88F60C00BF6C1C /* MusiFi */ = {
 			isa = PBXGroup;
 			children = (
-				07E5BCA21E88FF1F00292EE4 /* HomePlayer */,
+				07E5BCA21E88FF1F00292EE4 /* ShareScreen */,
 				07E5BCA41E88FF1F00292EE4 /* MusicList */,
 				07E5BCA61E88FF1F00292EE4 /* MusicMap */,
 				07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */,
@@ -93,11 +93,12 @@
 			path = MusiFi;
 			sourceTree = "<group>";
 		};
-		07E5BCA21E88FF1F00292EE4 /* HomePlayer */ = {
+		07E5BCA21E88FF1F00292EE4 /* ShareScreen */ = {
 			isa = PBXGroup;
 			children = (
-				07E5BCA31E88FF1F00292EE4 /* HomePlayerViewController.swift */,
+				07E5BCA31E88FF1F00292EE4 /* ShareViewController.swift */,
 			);
+			name = ShareScreen;
 			path = HomePlayer;
 			sourceTree = "<group>";
 		};
@@ -263,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E5BCA81E88FF1F00292EE4 /* HomePlayerViewController.swift in Sources */,
+				07E5BCA81E88FF1F00292EE4 /* ShareViewController.swift in Sources */,
 				07E5BCAA1E88FF1F00292EE4 /* MusicMapViewController.swift in Sources */,
 				07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */,
 				07E5BCB21E8915B400292EE4 /* LocationManager.swift in Sources */,
