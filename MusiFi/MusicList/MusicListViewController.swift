@@ -26,7 +26,7 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //REQUEST FOR ITEMS
+        //TODO: REQUEST FOR ITEMS
     }
 
 }
@@ -38,12 +38,12 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //NUMBER OF ITEMS FROM REQUEST
+        return 10 //TODO: NUMBER OF ITEMS FROM REQUEST
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath)
-        //CONFIGURE CELL
+        //TODO: CONFIGURE CELL
         cell.imageView?.image = UIImage(named: "default_placeholder")
         return cell
     }

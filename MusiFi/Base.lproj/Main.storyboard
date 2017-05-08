@@ -39,28 +39,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3p-6F-24X">
-                                <rect key="frame" x="167" y="318" width="40" height="30"/>
-                                <state key="normal" title="Share"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMD-Cg-W9d" customClass="KDCircularProgress" customModule="KDCircularProgress">
+                                <rect key="frame" x="113" y="259" width="148" height="148"/>
+                                <color key="backgroundColor" red="0.070050278209999997" green="1" blue="0.11313394879999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="BSZ-ux-41C"/>
+                                    <constraint firstAttribute="height" constant="148" id="Z6o-A9-HEp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="-90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="gradientRotateSpeed">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="glowAmount">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-zL-ztD">
+                                <rect key="frame" x="113" y="259" width="148" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="3ge-d7-232"/>
+                                    <constraint firstAttribute="height" constant="148" id="TG7-AL-wda"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="shareButtonPressed:" destination="fDD-kp-Tm0" eventType="touchUpInside" id="jT2-YR-5OL"/>
+                                    <action selector="shareButtonPressed:" destination="fDD-kp-Tm0" eventType="touchUpInside" id="Oru-Ri-W8F"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="r3p-6F-24X" firstAttribute="centerY" secondItem="51R-0E-BIx" secondAttribute="centerY" id="EHA-ja-BfW"/>
-                            <constraint firstItem="r3p-6F-24X" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="aGH-WF-BWl"/>
+                            <constraint firstItem="EMD-Cg-W9d" firstAttribute="centerY" secondItem="51R-0E-BIx" secondAttribute="centerY" id="2n7-fi-P3Y"/>
+                            <constraint firstItem="EMD-Cg-W9d" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="IRn-z2-91g"/>
+                            <constraint firstItem="9Nt-zL-ztD" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="TLJ-0y-1W9"/>
+                            <constraint firstItem="9Nt-zL-ztD" firstAttribute="centerY" secondItem="51R-0E-BIx" secondAttribute="centerY" id="mlH-P6-5zu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" image="tab_share" id="7Kc-3y-Fgj"/>
                     <connections>
-                        <outlet property="shareButton" destination="r3p-6F-24X" id="eGB-xO-B1u"/>
+                        <outlet property="progressiveView" destination="EMD-Cg-W9d" id="iai-yM-7Gj"/>
+                        <outlet property="shareButton" destination="9Nt-zL-ztD" id="v1Z-cj-fAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0p-Jd-liN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1844" y="478"/>
+            <point key="canvasLocation" x="-1844" y="477.21139430284859"/>
         </scene>
         <!--Environment-->
         <scene sceneID="Ocr-N4-L2O">

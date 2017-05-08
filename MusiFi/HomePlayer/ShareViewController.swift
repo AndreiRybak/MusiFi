@@ -10,9 +10,11 @@ import UIKit
 import AVFoundation
 import CoreLocation
 import MediaPlayer
+import KDCircularProgress
 
 class ShareViewController: UIViewController, CLLocationManagerDelegate {
-
+    
+    @IBOutlet weak var progressiveView: KDCircularProgress!
     @IBOutlet weak var shareButton: UIButton!
     
     var nowPlayingInfo:[String:Any] = [:]
@@ -23,18 +25,29 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        shareButton.layer.cornerRadius = 0.5 * shareButton.bounds.size.width;
+        progressiveView.angle = 0
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
 
     @IBAction func shareButtonPressed(_ sender: UIButton?) {
-        fetchMP3Info()
-        //SHOULD BE CALLED AFTER LOCATION UPDATE
-        writeLocation()
-        sendData()
+        
+        shareButton.isEnabled = false
+        
+        progressiveView.animate(toAngle: 360, duration: 1.5) { [weak self] (complete) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.fetchMP3Info()
+            strongSelf.writeLocation()
+            strongSelf.sendData()
+            strongSelf.progressiveView.angle = 0
+            strongSelf.shareButton.isEnabled = true
+        }
     }
-
     
     fileprivate func fetchMP3Info() {
         
