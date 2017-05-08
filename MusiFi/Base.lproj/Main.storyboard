@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="bUq-2W-XIO">
             <objects>
-                <tabBarController id="Epn-BD-SX3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="Epn-BD-SX3" customClass="TabBarViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yYE-Jq-uaS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-1106" y="-358"/>
         </scene>
-        <!--Item-->
+        <!--Share-->
         <scene sceneID="c6f-Er-6rh">
             <objects>
-                <viewController id="fDD-kp-Tm0" customClass="ShareViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shareViewController" id="fDD-kp-Tm0" customClass="ShareViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MCr-h2-S4a"/>
                         <viewControllerLayoutGuide type="bottom" id="9tY-qI-5st"/>
@@ -47,18 +47,22 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="r3p-6F-24X" firstAttribute="centerY" secondItem="51R-0E-BIx" secondAttribute="centerY" id="EHA-ja-BfW"/>
                             <constraint firstItem="r3p-6F-24X" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="aGH-WF-BWl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7Kc-3y-Fgj"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="tab_share" id="7Kc-3y-Fgj"/>
+                    <connections>
+                        <outlet property="shareButton" destination="r3p-6F-24X" id="eGB-xO-B1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0p-Jd-liN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="-1038"/>
+            <point key="canvasLocation" x="-1844" y="478"/>
         </scene>
-        <!--Item-->
+        <!--Environment-->
         <scene sceneID="Ocr-N4-L2O">
             <objects>
                 <viewController id="53G-hA-e32" customClass="MusicMapViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,16 +86,16 @@
                             <constraint firstItem="iDx-G9-6tE" firstAttribute="top" secondItem="SAv-nR-qWY" secondAttribute="bottom" id="myA-6A-5Xd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="D00-CQ-hHz"/>
+                    <tabBarItem key="tabBarItem" title="Environment" image="tab_environment" id="D00-CQ-hHz"/>
                     <connections>
                         <outlet property="mapView" destination="iDx-G9-6tE" id="5f6-UE-mfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ss5-P1-PHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272.80000000000001" y="-358.4707646176912"/>
+            <point key="canvasLocation" x="-1106" y="479"/>
         </scene>
-        <!--Item-->
+        <!--Music list-->
         <scene sceneID="G5Y-Jc-FNk">
             <objects>
                 <viewController id="QLp-r2-f4L" customClass="MusicListViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,14 +124,19 @@
                             <constraint firstAttribute="trailing" secondItem="c7p-U7-SpG" secondAttribute="trailing" id="ig2-Gk-h2q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="t2L-qU-8KV"/>
+                    <tabBarItem key="tabBarItem" title="Music list" image="tab_list" id="t2L-qU-8KV"/>
                     <connections>
                         <outlet property="tableView" destination="c7p-U7-SpG" id="3DH-D0-LFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnA-NB-QgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272.80000000000001" y="403.44827586206901"/>
+            <point key="canvasLocation" x="-386" y="478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_environment" width="26" height="26"/>
+        <image name="tab_list" width="26" height="26"/>
+        <image name="tab_share" width="26" height="26"/>
+    </resources>
 </document>

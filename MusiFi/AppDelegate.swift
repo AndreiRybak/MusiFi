@@ -15,7 +15,7 @@ import MediaPlayer
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let locationManger = LocationManager.sharedInstance
+    let locationManager = CLLocationManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -38,8 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        locationManger.requestAlwaysAuthorization()
-        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
         
         if #available(iOS 9.3, *) {
             if (MPMediaLibrary.authorizationStatus() != .authorized) {
@@ -55,6 +54,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+
+        let rootTabBarController = UIApplication.shared.keyWindow?.rootViewController! as! UITabBarController
+        
+        if shortcutItem.type == "com.musifi.share" {
+            
+            rootTabBarController.selectedIndex = 0
+            let sharingVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "shareViewController") as! ShareViewController
+            sharingVC.shareButtonPressed(nil)
+            
+        } else if shortcutItem.type == "com.musifi.map" {
+            
+            rootTabBarController.selectedIndex = 1
+            
+        } else if shortcutItem.type == "com.musifi.list" {
+            
+           rootTabBarController.selectedIndex = 2
+        }
     }
 
 }

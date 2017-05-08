@@ -42,6 +42,33 @@
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>tab_share</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.musifi.share</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Share music</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.musifi.map</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Music environment</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>tab_environment</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>tab_list</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.musifi.list</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Music list</string>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

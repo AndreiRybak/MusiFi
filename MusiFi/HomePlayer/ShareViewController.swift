@@ -13,6 +13,8 @@ import MediaPlayer
 
 class ShareViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var shareButton: UIButton!
+    
     var nowPlayingInfo:[String:Any] = [:]
     
     fileprivate let locationManager = CLLocationManager()
@@ -21,13 +23,16 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
 
-    @IBAction func shareButtonPressed(_ sender: UIButton) {
+    @IBAction func shareButtonPressed(_ sender: UIButton?) {
         fetchMP3Info()
+        //SHOULD BE CALLED AFTER LOCATION UPDATE
         writeLocation()
+        sendData()
     }
 
     
@@ -61,5 +66,10 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         let location = locations[0]
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
+    }
+    
+    //Implement for send soundtrack Data
+    fileprivate func sendData() {
+        
     }
 }
