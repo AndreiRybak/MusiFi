@@ -63,8 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if shortcutItem.type == "com.musifi.share" {
             
             rootTabBarController.selectedIndex = 0
-            let sharingVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "shareViewController") as! ShareViewController
-            //TODO: APPLICATION CRASH BECAUSE PROGRESS VIEW NOT INITIALIZED
+            let sharingVC = rootTabBarController.selectedViewController as! ShareViewController
             sharingVC.shareButtonPressed(nil)
             
         } else if shortcutItem.type == "com.musifi.map" {
