@@ -17,21 +17,44 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var progressiveView: KDCircularProgress!
     @IBOutlet weak var shareButton: UIButton!
     
-    var nowPlayingInfo:[String:Any] = [:]
+    @IBOutlet weak var noteView: UIView!
     
     fileprivate let locationManager = CLLocationManager()
     fileprivate var latitude: Double = 0.0
     fileprivate var longitude: Double = 0.0
     
+    var nowPlayingInfo:[String:Any] = [:]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shareButton.layer.cornerRadius = 0.5 * shareButton.bounds.size.width;
-        progressiveView.angle = 0
+        configureUI()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+    }
+    
+    fileprivate func configureUI() {
+        self.view.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        
+        shareButton.layer.cornerRadius = 0.5 * shareButton.bounds.size.width
+        
+        progressiveView.angle = 0
+        progressiveView.trackColor = UIColor(red: 246/255, green: 166/255, blue: 12/255, alpha: 1)
+        progressiveView.progressInsideFillColor = UIColor(red: 246/255, green: 166/255, blue: 12/255, alpha: 1)
+        
+        noteView.backgroundColor = UIColor(red: 39/255, green: 39/255, blue: 39/255, alpha: 1)
+        noteView.layer.cornerRadius = 16
+        
+        tabBarController?.tabBar.tintColor = UIColor(red: 251/255, green: 155/255, blue: 51/255, alpha: 1)
+        tabBarController?.tabBar.barTintColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+    
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     @IBAction func shareButtonPressed(_ sender: UIButton?) {
@@ -81,7 +104,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         self.longitude = location.coordinate.longitude
     }
     
-    //Implement for send soundtrack Data
+    //TODO: IMPLEMENT FOR SEND TRACK DATA
     fileprivate func sendData() {
         
     }

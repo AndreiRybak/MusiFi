@@ -19,6 +19,9 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        
         tableView.register(UINib.init(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellReuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 90.0
@@ -27,6 +30,10 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         //TODO: REQUEST FOR ITEMS
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
 }
