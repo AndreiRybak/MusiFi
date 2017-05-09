@@ -1,5 +1,5 @@
 //
-//  MusicListTableCellTableViewCell.swift
+//  MusicListTableCell.swift
 //  MusiFi
 //
 //  Created by Andrei Rybak on 3/27/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicListTableCellTableViewCell: UITableViewCell {
+class MusicListTableCell: UITableViewCell {
     
     @IBOutlet weak var trackImage: UIImageView!
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -16,6 +16,12 @@ class MusicListTableCellTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        self.contentView.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 251/255, green: 155/255, blue: 51/255, alpha: 0.9)
+        self.selectedBackgroundView = bgColorView
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

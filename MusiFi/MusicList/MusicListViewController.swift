@@ -21,6 +21,7 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        self.tableView.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
         
         tableView.register(UINib.init(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellReuseIdentifier)
         tableView.tableFooterView = UIView()
@@ -49,7 +50,7 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableCell
         //TODO: CONFIGURE CELL
         cell.imageView?.image = UIImage(named: "default_placeholder")
         return cell
