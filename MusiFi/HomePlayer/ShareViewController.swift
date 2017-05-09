@@ -14,10 +14,13 @@ import KDCircularProgress
 
 class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet weak var progressiveView: KDCircularProgress!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet fileprivate weak var musiFiLabel: UILabel!
     
-    @IBOutlet weak var noteView: UIView!
+    @IBOutlet fileprivate weak var progressiveView: KDCircularProgress!
+    @IBOutlet fileprivate weak var shareButton: UIButton!
+    
+    @IBOutlet fileprivate weak var noteView: UIView!
+    @IBOutlet fileprivate weak var noteHeader: UILabel!
     
     fileprivate let locationManager = CLLocationManager()
     fileprivate var latitude: Double = 0.0
@@ -37,7 +40,10 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     fileprivate func configureUI() {
+        
         self.view.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        
+        musiFiLabel.textColor = UIColor(red: 251/255, green: 155/255, blue: 51/255, alpha: 1)
         
         shareButton.layer.cornerRadius = 0.5 * shareButton.bounds.size.width
         
@@ -47,10 +53,20 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         
         noteView.backgroundColor = UIColor(red: 39/255, green: 39/255, blue: 39/255, alpha: 1)
         noteView.layer.cornerRadius = 16
+        setAttributedText()
         
         tabBarController?.tabBar.tintColor = UIColor(red: 251/255, green: 155/255, blue: 51/255, alpha: 1)
         tabBarController?.tabBar.barTintColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
     
+    }
+    
+    fileprivate func  setAttributedText() {
+        
+        let musiFiString = NSString(string:"Share your music with MusiFi")
+        let attributedString = NSMutableAttributedString(string: musiFiString as String)
+        let range = musiFiString.range(of: "MusiFi")
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 246/255, green: 166/255, blue: 12/255, alpha: 1), range: range)
+        noteHeader.attributedText = attributedString
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

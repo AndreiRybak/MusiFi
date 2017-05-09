@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -90,7 +91,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRw-CQ-Q1G">
                                 <rect key="frame" x="6" y="328" width="363" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your music with MusiFi!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-Xw-FFO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your music with MusiFi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-Xw-FFO">
                                         <rect key="frame" x="8" y="8" width="347" height="31.5"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.99598360060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -188,20 +189,32 @@
                                     <constraint firstAttribute="trailing" secondItem="7va-bh-BpQ" secondAttribute="trailing" constant="8" id="zTB-2F-Nca"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusiFi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhl-ym-eAf">
+                                <rect key="frame" x="24" y="38" width="327" height="43"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Qhl-ym-eAf" firstAttribute="leading" secondItem="51R-0E-BIx" secondAttribute="leadingMargin" constant="8" id="075-XD-XdR"/>
+                            <constraint firstItem="Qhl-ym-eAf" firstAttribute="top" secondItem="MCr-h2-S4a" secondAttribute="bottom" constant="18" id="6fC-ea-wf3"/>
                             <constraint firstItem="qRw-CQ-Q1G" firstAttribute="leading" secondItem="51R-0E-BIx" secondAttribute="leading" constant="6" id="Blb-aE-tvw"/>
                             <constraint firstItem="9Nt-zL-ztD" firstAttribute="top" secondItem="MCr-h2-S4a" secondAttribute="bottom" constant="80" id="HmQ-dK-rFM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qhl-ym-eAf" secondAttribute="trailing" constant="8" id="IlM-Y9-kk8"/>
                             <constraint firstItem="qRw-CQ-Q1G" firstAttribute="top" secondItem="9Nt-zL-ztD" secondAttribute="bottom" constant="80" id="KE0-Hm-48M"/>
                             <constraint firstItem="EMD-Cg-W9d" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="WfS-ED-TFY"/>
                             <constraint firstAttribute="trailing" secondItem="qRw-CQ-Q1G" secondAttribute="trailing" constant="6" id="bCA-2f-nxc"/>
                             <constraint firstItem="9Nt-zL-ztD" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="do8-pz-L6b"/>
                             <constraint firstItem="EMD-Cg-W9d" firstAttribute="top" secondItem="MCr-h2-S4a" secondAttribute="bottom" constant="80" id="irw-6x-JkT"/>
+                            <constraint firstItem="Qhl-ym-eAf" firstAttribute="centerX" secondItem="51R-0E-BIx" secondAttribute="centerX" id="uzm-Mh-Fxg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" image="tab_share" id="7Kc-3y-Fgj"/>
                     <connections>
+                        <outlet property="musiFiLabel" destination="Qhl-ym-eAf" id="cqJ-yM-3Jj"/>
+                        <outlet property="noteHeader" destination="Otb-Xw-FFO" id="BcR-H7-0oJ"/>
                         <outlet property="noteView" destination="qRw-CQ-Q1G" id="5Lc-yA-zR6"/>
                         <outlet property="progressiveView" destination="EMD-Cg-W9d" id="iai-yM-7Gj"/>
                         <outlet property="shareButton" destination="9Nt-zL-ztD" id="v1Z-cj-fAe"/>
