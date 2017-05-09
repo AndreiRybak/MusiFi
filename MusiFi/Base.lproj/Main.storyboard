@@ -215,6 +215,7 @@
                     <connections>
                         <outlet property="musiFiLabel" destination="Qhl-ym-eAf" id="cqJ-yM-3Jj"/>
                         <outlet property="noteHeader" destination="Otb-Xw-FFO" id="BcR-H7-0oJ"/>
+                        <outlet property="noteImage" destination="ekQ-oC-soz" id="tZK-b7-hn5"/>
                         <outlet property="noteView" destination="qRw-CQ-Q1G" id="5Lc-yA-zR6"/>
                         <outlet property="progressiveView" destination="EMD-Cg-W9d" id="iai-yM-7Gj"/>
                         <outlet property="shareButton" destination="9Nt-zL-ztD" id="v1Z-cj-fAe"/>
