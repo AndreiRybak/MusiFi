@@ -12,7 +12,7 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
 
-    struct Constants {
+    fileprivate struct Constants {
         static let cellNibName = "MusicListTableCell"
         static let cellReuseIdentifier = "musicListCell"
     }
@@ -20,8 +20,8 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
-        self.tableView.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        self.view.backgroundColor = Colors.dark
+        self.tableView.backgroundColor = Colors.dark
         
         tableView.register(UINib.init(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellReuseIdentifier)
         tableView.tableFooterView = UIView()

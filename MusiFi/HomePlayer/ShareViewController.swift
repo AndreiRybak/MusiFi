@@ -12,6 +12,12 @@ import CoreLocation
 import MediaPlayer
 import KDCircularProgress
 
+internal struct Colors {
+    static let dark = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+    static let gray = UIColor(red: 39/255, green: 39/255, blue: 39/255, alpha: 1)
+    static let orange = UIColor(red: 246/255, green: 166/255, blue: 12/255, alpha: 1)
+}
+
 class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet fileprivate weak var musiFiLabel: UILabel!
@@ -29,12 +35,6 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     fileprivate var longitude: Double = 0.0
     
     internal var nowPlayingInfo:[String:Any] = [:]
-    
-    struct Colors {
-        static let dark = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
-        static let gray = UIColor(red: 39/255, green: 39/255, blue: 39/255, alpha: 1)
-        static let orange = UIColor(red: 246/255, green: 166/255, blue: 12/255, alpha: 1)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,11 +16,11 @@ class MusicListTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
-        self.contentView.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        self.backgroundColor = Colors.dark
+        self.contentView.backgroundColor = Colors.dark
         
         let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red: 251/255, green: 155/255, blue: 51/255, alpha: 0.9)
+        bgColorView.backgroundColor = Colors.orange
         self.selectedBackgroundView = bgColorView
     }
 

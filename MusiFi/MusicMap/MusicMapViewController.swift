@@ -20,7 +20,7 @@ class MusicMapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        self.view.backgroundColor = Colors.dark
         
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
