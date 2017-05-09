@@ -28,6 +28,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     var nowPlayingInfo:[String:Any] = [:]
     
+    @IBOutlet weak var shareButtonImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,29 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         noteHeader.attributedText = attributedString
     }
     
+    fileprivate func startAnimateShareButton() {
+        let fullRotation = CGFloat(Double.pi * 2)
+        let duration = 1.7
+        let delay = 0.0
+        let options = UIViewKeyframeAnimationOptions.calculationModeLinear
+        
+        UIView.animateKeyframes(withDuration: duration, delay: delay, options: options, animations: {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
+                self.shareButtonImage.transform = CGAffineTransform(rotationAngle: 1/3 * fullRotation)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 1/3, relativeDuration: 1/3, animations: {
+                self.shareButtonImage.transform = CGAffineTransform(rotationAngle: 2/3 * fullRotation)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 2/3, relativeDuration: 1/3, animations: {
+                self.shareButtonImage.transform = CGAffineTransform(rotationAngle: 3/3 * fullRotation)
+            })
+            
+        }, completion: {finished in
+            
+        })
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -76,6 +100,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func shareButtonPressed(_ sender: UIButton?) {
         
         shareButton.isEnabled = false
+        startAnimateShareButton()
         
         progressiveView.animate(toAngle: 360, duration: 1.5) { [weak self] (complete) in
             guard let strongSelf = self else { return }

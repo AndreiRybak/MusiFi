@@ -218,6 +218,7 @@
                         <outlet property="noteView" destination="qRw-CQ-Q1G" id="5Lc-yA-zR6"/>
                         <outlet property="progressiveView" destination="EMD-Cg-W9d" id="iai-yM-7Gj"/>
                         <outlet property="shareButton" destination="9Nt-zL-ztD" id="v1Z-cj-fAe"/>
+                        <outlet property="shareButtonImage" destination="IHw-jy-zfE" id="x0c-g2-Zm8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0p-Jd-liN" userLabel="First Responder" sceneMemberID="firstResponder"/>
