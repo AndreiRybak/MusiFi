@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="musicListCell" rowHeight="100" id="KGk-i7-Jjw" customClass="MusicListTableCell" customModule="MusiFi" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteListCell" rowHeight="100" id="KGk-i7-Jjw" customClass="FavoriteListTableCell" customModule="MusiFi" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="348" height="91"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -39,13 +39,6 @@
                         <color key="textColor" red="1" green="0.99598360060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPu-4u-Zp9">
-                        <rect key="frame" x="300" y="42.5" width="40" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="jqd-nK-8Er"/>
-                            <constraint firstAttribute="width" constant="40" id="rWZ-La-5VQ"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
@@ -55,20 +48,17 @@
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rhn-wK-4Xg" secondAttribute="bottom" constant="10" id="OTa-Bx-amW"/>
                     <constraint firstAttribute="trailing" secondItem="DSh-LE-rt5" secondAttribute="trailing" constant="10" id="OoE-7s-rSc"/>
                     <constraint firstAttribute="bottom" secondItem="Dbc-Wm-hkG" secondAttribute="bottom" constant="10" id="P08-0X-do9"/>
-                    <constraint firstAttribute="trailing" secondItem="RPu-4u-Zp9" secondAttribute="trailing" constant="8" id="VgC-FB-ggB"/>
                     <constraint firstItem="rhn-wK-4Xg" firstAttribute="leading" secondItem="Dbc-Wm-hkG" secondAttribute="trailing" constant="10" id="aok-HC-AVX"/>
                     <constraint firstItem="rhn-wK-4Xg" firstAttribute="top" secondItem="DSh-LE-rt5" secondAttribute="bottom" id="cYR-qZ-RIL"/>
-                    <constraint firstAttribute="bottom" secondItem="RPu-4u-Zp9" secondAttribute="bottom" constant="8" id="kX6-Fi-cTT"/>
                     <constraint firstItem="Dbc-Wm-hkG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nuB-3w-B3K"/>
                     <constraint firstItem="DSh-LE-rt5" firstAttribute="leading" secondItem="Dbc-Wm-hkG" secondAttribute="trailing" constant="10" id="tRd-oo-jhE"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="78" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
-                <outlet property="authorLabel" destination="rhn-wK-4Xg" id="EM9-v9-hbj"/>
-                <outlet property="likeView" destination="RPu-4u-Zp9" id="Hcg-hO-2tX"/>
-                <outlet property="trackImage" destination="Dbc-Wm-hkG" id="sf7-nL-h8j"/>
-                <outlet property="trackNameLabel" destination="DSh-LE-rt5" id="ljf-dX-Sva"/>
+                <outlet property="authorLabel" destination="rhn-wK-4Xg" id="xgK-Rj-gNq"/>
+                <outlet property="trackImage" destination="Dbc-Wm-hkG" id="yqr-XU-x4K"/>
+                <outlet property="trackNameLabel" destination="DSh-LE-rt5" id="g7R-iH-XMg"/>
             </connections>
             <point key="canvasLocation" x="48" y="82.5"/>
         </tableViewCell>

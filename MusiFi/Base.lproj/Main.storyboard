@@ -21,7 +21,7 @@
                     <connections>
                         <segue destination="fDD-kp-Tm0" kind="relationship" relationship="viewControllers" id="GJT-FI-JzK"/>
                         <segue destination="53G-hA-e32" kind="relationship" relationship="viewControllers" id="0B6-80-SNm"/>
-                        <segue destination="QLp-r2-f4L" kind="relationship" relationship="viewControllers" id="KNK-mU-UTw"/>
+                        <segue destination="EiV-Ze-PH2" kind="relationship" relationship="viewControllers" id="gBP-GJ-W1e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRG-fS-os7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,11 +268,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fs3-Yd-T69"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0dS-cq-b8O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7p-U7-SpG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QLp-r2-f4L" id="hE2-ln-mtS"/>
@@ -289,13 +289,69 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Music list" image="tab_list" id="t2L-qU-8KV"/>
+                    <navigationItem key="navigationItem" id="2zt-3c-5d6"/>
                     <connections>
                         <outlet property="tableView" destination="c7p-U7-SpG" id="3DH-D0-LFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnA-NB-QgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="478"/>
+            <point key="canvasLocation" x="537" y="478"/>
+        </scene>
+        <!--Favorite List View Controller-->
+        <scene sceneID="T6D-G0-IpN">
+            <objects>
+                <viewController storyboardIdentifier="favoriteListViewController" id="xyM-06-fmE" customClass="FavoriteListViewController" customModule="MusiFi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ar-wy-JU9"/>
+                        <viewControllerLayoutGuide type="bottom" id="10q-Yr-AgZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuI-tV-JQD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rwq-BH-afa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xyM-06-fmE" id="rZf-Bf-Ghi"/>
+                                    <outlet property="delegate" destination="xyM-06-fmE" id="y8a-of-kyo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rwq-BH-afa" secondAttribute="trailing" id="ApM-ac-egg"/>
+                            <constraint firstItem="rwq-BH-afa" firstAttribute="leading" secondItem="iuI-tV-JQD" secondAttribute="leading" id="oAc-dX-ONV"/>
+                            <constraint firstItem="rwq-BH-afa" firstAttribute="top" secondItem="iuI-tV-JQD" secondAttribute="top" id="zEs-6p-4F0"/>
+                            <constraint firstItem="10q-Yr-AgZ" firstAttribute="top" secondItem="rwq-BH-afa" secondAttribute="bottom" id="zuA-Vm-34B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rwq-BH-afa" id="rj3-4b-mty"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmr-Ge-YdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="476.31184407796104"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="j9q-OW-wiw">
+            <objects>
+                <navigationController id="EiV-Ze-PH2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="tab_list" id="CPF-lF-28e"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Liu-na-5SP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QLp-r2-f4L" kind="relationship" relationship="rootViewController" id="mVo-eN-3mX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKD-fI-B7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="477"/>
         </scene>
     </scenes>
     <resources>

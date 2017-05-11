@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicListViewController: UIViewController, UITableViewDelegate{
+class MusicListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -16,18 +16,25 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
         static let cellNibName = "MusicListTableCell"
         static let cellReuseIdentifier = "musicListCell"
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = Colors.dark
         self.tableView.backgroundColor = Colors.dark
+        self.navigationController?.navigationBar.barTintColor = Colors.dark
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
         
         tableView.register(UINib.init(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellReuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 90.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        addMyFavoriteButton()
+        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         //TODO: REQUEST FOR ITEMS
@@ -35,6 +42,19 @@ class MusicListViewController: UIViewController, UITableViewDelegate{
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    fileprivate func addMyFavoriteButton() {
+        let button = UIBarButtonItem(title: "Favorite", style: .plain, target: self, action: #selector(showFavoriteController))
+        button.tintColor = Colors.orange
+        self.navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc fileprivate func showFavoriteController() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let favoriteVC = sb.instantiateViewController(withIdentifier: "favoriteListViewController") as! FavoriteListViewController
+        self.navigationController?.show(favoriteVC, sender: self)
+
     }
 
 }

@@ -10,15 +10,23 @@ import UIKit
 
 class FavoriteListTableCell: UITableViewCell {
 
+    @IBOutlet weak var trackImage: UIImageView!
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.backgroundColor = Colors.dark
+        self.contentView.backgroundColor = Colors.dark
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = Colors.orange
+        self.selectedBackgroundView = bgColorView
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		07B086481EC4C5C5005FCFC4 /* MusiFi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07B086461EC4C5C5005FCFC4 /* MusiFi.xcdatamodeld */; };
+		07B086541EC4D88D005FCFC4 /* FavoriteListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */; };
+		07B086561EC4D91C005FCFC4 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */; };
+		07B086581EC4D980005FCFC4 /* FavoriteListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */; };
 		07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */; };
 		07D539E21E88F60C00BF6C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E01E88F60C00BF6C1C /* Main.storyboard */; };
 		07D539E41E88F60C00BF6C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E31E88F60C00BF6C1C /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		07B086471EC4C5C5005FCFC4 /* MusiFi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusiFi.xcdatamodel; sourceTree = "<group>"; };
+		07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteListTableCell.xib; sourceTree = "<group>"; };
+		07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListTableCell.swift; sourceTree = "<group>"; };
 		07D539D91E88F60C00BF6C1C /* MusiFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusiFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07D539E11E88F60C00BF6C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07B086501EC4D7F6005FCFC4 /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */,
+				07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */,
+				07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */,
+			);
+			name = FavoriteList;
+			sourceTree = "<group>";
+		};
 		07D539D01E88F60B00BF6C1C = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				07E5BCA21E88FF1F00292EE4 /* ShareScreen */,
-				07E5BCA41E88FF1F00292EE4 /* MusicList */,
 				07E5BCA61E88FF1F00292EE4 /* MusicMap */,
+				07E5BCA41E88FF1F00292EE4 /* MusicList */,
+				07B086501EC4D7F6005FCFC4 /* FavoriteList */,
 				07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */,
 				07D539E01E88F60C00BF6C1C /* Main.storyboard */,
 				07D539E31E88F60C00BF6C1C /* Assets.xcassets */,
@@ -203,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E5BCAE1E89049C00292EE4 /* MusicListTableCell.xib in Resources */,
+				07B086541EC4D88D005FCFC4 /* FavoriteListTableCell.xib in Resources */,
 				07D539E71E88F60C00BF6C1C /* LaunchScreen.storyboard in Resources */,
 				07D539E41E88F60C00BF6C1C /* Assets.xcassets in Resources */,
 				07D539E21E88F60C00BF6C1C /* Main.storyboard in Resources */,
@@ -265,9 +283,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E5BCA81E88FF1F00292EE4 /* ShareViewController.swift in Sources */,
+				07B086581EC4D980005FCFC4 /* FavoriteListTableCell.swift in Sources */,
 				07E5BCAA1E88FF1F00292EE4 /* MusicMapViewController.swift in Sources */,
 				07B086481EC4C5C5005FCFC4 /* MusiFi.xcdatamodeld in Sources */,
 				07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */,
+				07B086561EC4D91C005FCFC4 /* FavoriteListViewController.swift in Sources */,
 				07E5BCAD1E89049C00292EE4 /* MusicListTableCell.swift in Sources */,
 				07E5BCB01E89113800292EE4 /* SessionController.swift in Sources */,
 				07E5BCA91E88FF1F00292EE4 /* MusicListViewController.swift in Sources */,
