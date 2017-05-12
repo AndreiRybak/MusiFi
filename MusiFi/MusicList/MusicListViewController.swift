@@ -8,9 +8,12 @@
 
 import UIKit
 
+
 class MusicListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    fileprivate var tracks: Array<FakeTrack> = []
 
     fileprivate struct Constants {
         static let cellNibName = "MusicListTableCell"
@@ -38,6 +41,32 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         //TODO: REQUEST FOR ITEMS
+        getAllTrack()
+       
+    }
+    
+    fileprivate func getAllTrack() {
+        let t1 = FakeTrack()
+        t1.artist = "The Neighbourhood"
+        t1.name = "West Coast"
+        
+        let t2 = FakeTrack()
+        t2.artist = "RÜFÜS"
+        t2.name = "Sarah"
+        
+        let t3 = FakeTrack()
+        t3.artist = "Miss Li"
+        t3.name = "Aualung"
+        
+        let t4 = FakeTrack()
+        t4.artist = "Calum Scott"
+        t4.name = "Dancing on my own"
+        
+        let t5 = FakeTrack()
+        t5.artist = "Ladi6"
+        t5.name = "Automatic"
+        
+        self.tracks = [t1,t2,t3,t4,t5]
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -56,7 +85,8 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
         self.navigationController?.show(favoriteVC, sender: self)
 
     }
-
+    
+    
 }
 
 extension MusicListViewController: UITableViewDataSource {
@@ -66,13 +96,15 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //TODO: NUMBER OF ITEMS FROM REQUEST
+        return tracks.count //TODO: NUMBER OF ITEMS FROM REQUEST
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableCell
         //TODO: CONFIGURE CELL
         cell.imageView?.image = UIImage(named: "default_placeholder")
+        cell.authorLabel.text = tracks[indexPath.row].artist
+        cell.trackNameLabel.text = tracks[indexPath.row].name
         return cell
     }
     

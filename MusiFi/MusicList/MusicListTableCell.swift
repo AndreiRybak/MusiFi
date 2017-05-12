@@ -8,6 +8,7 @@
 
 import UIKit
 import WCLShineButton
+import CoreData
 
 class MusicListTableCell: UITableViewCell {
     
@@ -16,6 +17,8 @@ class MusicListTableCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
 
     @IBOutlet weak var likeView: UIView!
+    
+    var tracks: [NSManagedObject] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,13 +43,58 @@ class MusicListTableCell: UITableViewCell {
         params.smallShineColor = UIColor(red: 239/255, green: 142/255, blue: 45/255, alpha: 1)
         
         let likeButton = WCLShineButton(frame: .init(x: 5, y: 5, width: 30, height: 30), params: params)
+        likeButton.addTarget(self, action: #selector(likeButtonPressed(sender:)), for: .touchUpInside)
         
         likeButton.fillColor = UIColor(red: 219/255, green: 87/255, blue: 90/255, alpha: 1)
         likeButton.color = UIColor.white
         likeView.addSubview(likeButton)
-        
-        //TODO: ADD ACTION FOR SAVE IN CORE DATA
-        //bt1.addTarget(self, action: #selector(action), for: .touchUpInside)
     }
     
+    @objc fileprivate func likeButtonPressed(sender: UIButton) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        if isCurrentlyAdded() == false {
+            
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            let entity = NSEntityDescription.entity(forEntityName: "FavoriteTrack", in: managedContext)!
+            
+            let track = NSManagedObject(entity: entity, insertInto: managedContext)
+            
+            track.setValue(self.trackNameLabel.text, forKey: "name")
+            track.setValue(self.authorLabel.text, forKey: "artist")
+            //track.setValue(self.imageView?.image, forKey: "image")
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+        }
+    }
+    
+    fileprivate func isCurrentlyAdded() -> Bool {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return true }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        var currentTracks: [NSManagedObject] = []
+        
+        let namePredicate = NSPredicate(format:"name == %@", trackNameLabel.text!)
+        let artistPredicate = NSPredicate(format:"artist == %@", authorLabel.text!)
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteTrack")
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [namePredicate, artistPredicate])
+        
+        fetchRequest.predicate = compoundPredicate
+        
+        do {
+            currentTracks = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        return currentTracks.count == 0 ? false : true
+    }
 }

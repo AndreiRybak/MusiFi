@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -319,7 +320,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rwq-BH-afa" secondAttribute="trailing" id="ApM-ac-egg"/>
                             <constraint firstItem="rwq-BH-afa" firstAttribute="leading" secondItem="iuI-tV-JQD" secondAttribute="leading" id="oAc-dX-ONV"/>
@@ -341,7 +341,7 @@
                 <navigationController id="EiV-Ze-PH2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="tab_list" id="CPF-lF-28e"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Liu-na-5SP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Liu-na-5SP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
