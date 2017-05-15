@@ -85,8 +85,6 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
         self.navigationController?.show(favoriteVC, sender: self)
 
     }
-    
-    
 }
 
 extension MusicListViewController: UITableViewDataSource {
@@ -102,6 +100,9 @@ extension MusicListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableCell
         //TODO: CONFIGURE CELL
+        //TODO: Configure like button
+//        cell.likeButton?.isSelected = true
+//        cell.likeButton?.isEnabled = false
         cell.imageView?.image = UIImage(named: "default_placeholder")
         cell.authorLabel.text = tracks[indexPath.row].artist
         cell.trackNameLabel.text = tracks[indexPath.row].name

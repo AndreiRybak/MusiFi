@@ -50,9 +50,28 @@ class FavoriteListViewController: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
+    
+    fileprivate func deleteFavoriteTrack(track: FavoriteTrack) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let namePredicate = NSPredicate(format:"name == %@", track.name!)
+        let artistPredicate = NSPredicate(format:"artist == %@", track.artist!)
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteTrack")
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [namePredicate, artistPredicate])
+        fetchRequest.predicate = compoundPredicate
+    
+        do {
+            if let tracks = try? managedContext.fetch(fetchRequest) {
+                for track in tracks {
+                    managedContext.delete(track)
+                }
+            }
+        }
+    }
 }
-
-//TODO: DELETE ROWS WHEN CORE DATA WILL BE IMPLEMENTED
 
 extension FavoriteListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -73,6 +92,19 @@ extension FavoriteListViewController: UITableViewDelegate, UITableViewDataSource
         cell.authorLabel.text = track.value(forKey: "artist") as? String
         cell.trackNameLabel.text = track.value(forKey: "name") as? String
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //TODO: UPDATE FAVORITE TRACK ON THE SERVER
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteFavoriteTrack(track: tracks[indexPath.row] as! FavoriteTrack)
+            tracks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .none)
+        }
     }
 
 }

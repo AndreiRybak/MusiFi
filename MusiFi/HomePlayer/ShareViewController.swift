@@ -36,8 +36,12 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     internal var nowPlayingInfo:[String:Any] = [:]
     
+    //TODO: WRITE UUID IN PLIST
+    fileprivate var uuid: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        uuid = UIDevice.current.identifierForVendor?.uuidString
         
         configureUI()
         
@@ -126,6 +130,9 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         
         let player = MPMusicPlayerController()
         let playerItem = player.nowPlayingItem
+        
+        nowPlayingInfo["id"] = uuid
+        nowPlayingInfo["favorite"] = false
         
         if let image = playerItem?.artwork?.image(at: CGSize(width: 70, height: 70)) {
             nowPlayingInfo["image"] = image

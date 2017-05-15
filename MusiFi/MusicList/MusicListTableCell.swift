@@ -17,6 +17,7 @@ class MusicListTableCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
 
     @IBOutlet weak var likeView: UIView!
+    var likeButton: WCLShineButton? = nil
     
     var tracks: [NSManagedObject] = []
     
@@ -42,12 +43,13 @@ class MusicListTableCell: UITableViewCell {
         params.bigShineColor = UIColor(red: 255/255, green: 97/255, blue: 0/255, alpha: 1)
         params.smallShineColor = UIColor(red: 239/255, green: 142/255, blue: 45/255, alpha: 1)
         
-        let likeButton = WCLShineButton(frame: .init(x: 5, y: 5, width: 30, height: 30), params: params)
-        likeButton.addTarget(self, action: #selector(likeButtonPressed(sender:)), for: .touchUpInside)
+        likeButton = WCLShineButton(frame: .init(x: 5, y: 5, width: 30, height: 30), params: params)
+        likeButton?.addTarget(self, action: #selector(likeButtonPressed(sender:)), for: .touchUpInside)
         
-        likeButton.fillColor = UIColor(red: 219/255, green: 87/255, blue: 90/255, alpha: 1)
-        likeButton.color = UIColor.white
-        likeView.addSubview(likeButton)
+        likeButton?.fillColor = UIColor(red: 219/255, green: 87/255, blue: 90/255, alpha: 1)
+        likeButton?.color = UIColor.white
+        
+        likeView.addSubview(likeButton!)
     }
     
     @objc fileprivate func likeButtonPressed(sender: UIButton) {
@@ -73,6 +75,8 @@ class MusicListTableCell: UITableViewCell {
         }
     }
     
+    
+    //TODO: DISABLE BUTTON WHEN FIELD isFavorite == TRUE
     fileprivate func isCurrentlyAdded() -> Bool {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return true }

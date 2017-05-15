@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusiFi/HomePlayer/ShareViewController.swift"
-            timestampString = "516212265.405557"
+            timestampString = "516557326.187792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "fetchMP3Info()"
             landmarkType = "7">
             <Locations>
@@ -26,12 +26,12 @@
                   moduleName = "MusiFi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/HomePlayer/ShareViewController.swift"
-                  timestampString = "516300646.389236"
+                  timestampString = "516558028.019395"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "516">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,14 +41,30 @@
                   moduleName = "MusiFi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/HomePlayer/ShareViewController.swift"
-                  timestampString = "516300646.390846"
+                  timestampString = "516558028.020787"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "324">
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "772">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusiFi/HomePlayer/ShareViewController.swift"
+            timestampString = "516557326.187792"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "shareButtonPressed(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
