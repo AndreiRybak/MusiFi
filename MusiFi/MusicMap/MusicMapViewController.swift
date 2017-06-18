@@ -30,7 +30,7 @@ class MusicMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
         if userRegion != nil {
             mapView.setRegion(userRegion!, animated: true)
         }
@@ -39,6 +39,7 @@ class MusicMapViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         isRegionsSetted = false
     }
     

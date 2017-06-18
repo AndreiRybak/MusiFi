@@ -29,9 +29,7 @@ class MusicListTableCell: UITableViewCell {
         let bgColorView = UIView()
         bgColorView.backgroundColor = Colors.orange
         self.selectedBackgroundView = bgColorView
-        
         addLikeButton()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

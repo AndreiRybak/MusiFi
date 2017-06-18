@@ -40,33 +40,12 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        //TODO: REQUEST FOR ITEMS
-        getAllTrack()
-       
-    }
-    
-    fileprivate func getAllTrack() {
-//        let t1 = Track()
-//        t1.artist = "The Neighbourhood"
-//        t1.name = "West Coast"
-//        
-//        let t2 = FakeTrack()
-//        t2.artist = "RÜFÜS"
-//        t2.name = "Sarah"
-//        
-//        let t3 = FakeTrack()
-//        t3.artist = "Miss Li"
-//        t3.name = "Aualung"
-//        
-//        let t4 = FakeTrack()
-//        t4.artist = "Calum Scott"
-//        t4.name = "Dancing on my own"
-//        
-//        let t5 = FakeTrack()
-//        t5.artist = "Ladi6"
-//        t5.name = "Automatic"
-//        
-//        self.tracks = [t1,t2,t3,t4,t5]
+        super.viewWillAppear(animated)
+       SessionController.getTracks { [weak self] (tracks) in
+            guard let strongSelf = self else { return }
+            strongSelf.tracks = tracks
+            strongSelf.tableView.reloadData()
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -94,18 +73,22 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tracks.count //TODO: NUMBER OF ITEMS FROM REQUEST
+        return tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableCell
+        let track = tracks[indexPath.row]
         //TODO: CONFIGURE CELL
         //TODO: Configure like button
-//        cell.likeButton?.isSelected = true
-//        cell.likeButton?.isEnabled = false
-        cell.imageView?.image = UIImage(named: "default_placeholder")
-        cell.authorLabel.text = tracks[indexPath.row].artist
-        cell.trackNameLabel.text = tracks[indexPath.row].name
+        //cell.imageView?.image = UIImage(named: "default_placeholder")
+        let dataDecoded : Data = Data(base64Encoded: track.image!, options: .ignoreUnknownCharacters)!
+        let image = UIImage(data: dataDecoded)
+        cell.trackImage?.image = image
+        
+        cell.authorLabel.text = track.artist
+        cell.trackNameLabel.text = track.name
+        
         return cell
     }
     
