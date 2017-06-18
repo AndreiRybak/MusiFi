@@ -74,6 +74,28 @@ class MusicListTableCell: UITableViewCell {
                 print("Could not save. \(error), \(error.userInfo)")
             }
         }
+        
+        if likeButton?.isSelected == true {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            let namePredicate = NSPredicate(format:"name == %@", self.trackNameLabel.text!)
+            let artistPredicate = NSPredicate(format:"artist == %@", self.authorLabel.text!)
+            
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteTrack")
+            let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [namePredicate, artistPredicate])
+            fetchRequest.predicate = compoundPredicate
+            
+            do {
+                if let tracks = try? managedContext.fetch(fetchRequest) {
+                    for track in tracks {
+                        managedContext.delete(track)
+                    }
+                }
+            }
+
+        }
     }
     
     fileprivate func isCurrentlyAdded() -> Bool {
