@@ -10,7 +10,7 @@
 		07B086541EC4D88D005FCFC4 /* FavoriteListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */; };
 		07B086561EC4D91C005FCFC4 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */; };
 		07B086581EC4D980005FCFC4 /* FavoriteListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */; };
-		07B0865A1EC60B67005FCFC4 /* FakeTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086591EC60B67005FCFC4 /* FakeTrack.swift */; };
+		07B0865A1EC60B67005FCFC4 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086591EC60B67005FCFC4 /* Track.swift */; };
 		07B0867F1EC60F37005FCFC4 /* MusiFi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07B0867D1EC60F37005FCFC4 /* MusiFi.xcdatamodeld */; };
 		07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */; };
 		07D539E21E88F60C00BF6C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E01E88F60C00BF6C1C /* Main.storyboard */; };
@@ -31,7 +31,7 @@
 		07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteListTableCell.xib; sourceTree = "<group>"; };
 		07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListTableCell.swift; sourceTree = "<group>"; };
-		07B086591EC60B67005FCFC4 /* FakeTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeTrack.swift; sourceTree = "<group>"; };
+		07B086591EC60B67005FCFC4 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		07B0867E1EC60F37005FCFC4 /* MusiFi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusiFi.xcdatamodel; sourceTree = "<group>"; };
 		07D539D91E88F60C00BF6C1C /* MusiFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusiFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,17 +97,17 @@
 		07D539DB1E88F60C00BF6C1C /* MusiFi */ = {
 			isa = PBXGroup;
 			children = (
+				07B086591EC60B67005FCFC4 /* Track.swift */,
 				07E5BCA21E88FF1F00292EE4 /* ShareScreen */,
 				07E5BCA61E88FF1F00292EE4 /* MusicMap */,
 				07E5BCA41E88FF1F00292EE4 /* MusicList */,
 				07B086501EC4D7F6005FCFC4 /* FavoriteList */,
 				07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */,
+				07E5BCAF1E89113800292EE4 /* SessionController.swift */,
 				07D539E01E88F60C00BF6C1C /* Main.storyboard */,
 				07D539E31E88F60C00BF6C1C /* Assets.xcassets */,
 				07D539E51E88F60C00BF6C1C /* LaunchScreen.storyboard */,
 				07D539E81E88F60C00BF6C1C /* Info.plist */,
-				07E5BCAF1E89113800292EE4 /* SessionController.swift */,
-				07B086591EC60B67005FCFC4 /* FakeTrack.swift */,
 				07B0867D1EC60F37005FCFC4 /* MusiFi.xcdatamodeld */,
 			);
 			path = MusiFi;
@@ -294,7 +294,7 @@
 				07E5BCAD1E89049C00292EE4 /* MusicListTableCell.swift in Sources */,
 				07E5BCB01E89113800292EE4 /* SessionController.swift in Sources */,
 				07E5BCA91E88FF1F00292EE4 /* MusicListViewController.swift in Sources */,
-				07B0865A1EC60B67005FCFC4 /* FakeTrack.swift in Sources */,
+				07B0865A1EC60B67005FCFC4 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

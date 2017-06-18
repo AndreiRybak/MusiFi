@@ -6,47 +6,78 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MusiFi/HomePlayer/ShareViewController.swift"
-            timestampString = "516557326.187792"
+            filePath = "MusiFi/SessionController.swift"
+            timestampString = "519473189.193154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "fetchMP3Info()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getTracks(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusiFi/SessionController.swift"
+            timestampString = "519473249.033385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "sendTrack(track:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MusiFi.ShareViewController.(fetchMP3Info in _9472862BF36674255F8AD3665FD143DB) () -&gt; ()"
+                  symbolName = "static MusiFi.SessionController.sendTrack (track : MusiFi.Track) -&gt; ()"
                   moduleName = "MusiFi"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/HomePlayer/ShareViewController.swift"
-                  timestampString = "516558028.019395"
+                  urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/SessionController.swift"
+                  timestampString = "519473389.95871"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "516">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1844">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MusiFi.ShareViewController.(fetchMP3Info in _9472862BF36674255F8AD3665FD143DB) () -&gt; ()"
+                  symbolName = "static MusiFi.SessionController.sendTrack (track : MusiFi.Track) -&gt; ()"
                   moduleName = "MusiFi"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/HomePlayer/ShareViewController.swift"
-                  timestampString = "516558028.020787"
+                  urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/SessionController.swift"
+                  timestampString = "519473389.960109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "772">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "2224">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MusiFi.SessionController.(sendTrack (track : MusiFi.Track) -&gt; ()).(closure #1)"
+                  moduleName = "MusiFi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andrei_Rybak/RybakAndrei/MusiFi/MusiFi/SessionController.swift"
+                  timestampString = "519473389.961502"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "136">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,12 +89,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusiFi/HomePlayer/ShareViewController.swift"
-            timestampString = "516557326.187792"
+            timestampString = "519490199.924923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "shareButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusiFi/MusicMap/MusicMapViewController.swift"
+            timestampString = "519492729.612488"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

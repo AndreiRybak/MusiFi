@@ -12,5 +12,7 @@ target 'MusiFi' do
     pod 'KDCircularProgress'
     
     pod 'WCLShineButton'
+    
+    pod 'SwiftyJSON'
 
 end

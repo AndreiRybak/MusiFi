@@ -13,7 +13,7 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var tracks: Array<FakeTrack> = []
+    fileprivate var tracks: Array<Track> = []
 
     fileprivate struct Constants {
         static let cellNibName = "MusicListTableCell"
@@ -46,27 +46,27 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
     }
     
     fileprivate func getAllTrack() {
-        let t1 = FakeTrack()
-        t1.artist = "The Neighbourhood"
-        t1.name = "West Coast"
-        
-        let t2 = FakeTrack()
-        t2.artist = "RÜFÜS"
-        t2.name = "Sarah"
-        
-        let t3 = FakeTrack()
-        t3.artist = "Miss Li"
-        t3.name = "Aualung"
-        
-        let t4 = FakeTrack()
-        t4.artist = "Calum Scott"
-        t4.name = "Dancing on my own"
-        
-        let t5 = FakeTrack()
-        t5.artist = "Ladi6"
-        t5.name = "Automatic"
-        
-        self.tracks = [t1,t2,t3,t4,t5]
+//        let t1 = Track()
+//        t1.artist = "The Neighbourhood"
+//        t1.name = "West Coast"
+//        
+//        let t2 = FakeTrack()
+//        t2.artist = "RÜFÜS"
+//        t2.name = "Sarah"
+//        
+//        let t3 = FakeTrack()
+//        t3.artist = "Miss Li"
+//        t3.name = "Aualung"
+//        
+//        let t4 = FakeTrack()
+//        t4.artist = "Calum Scott"
+//        t4.name = "Dancing on my own"
+//        
+//        let t5 = FakeTrack()
+//        t5.artist = "Ladi6"
+//        t5.name = "Automatic"
+//        
+//        self.tracks = [t1,t2,t3,t4,t5]
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

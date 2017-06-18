@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '54828E3E79CAE492FD869B32017AD47B'
-               BlueprintName = 'WCLShineButton'
+               BlueprintIdentifier = 'A694CBE08B2161A480DF38CC9FFC409A'
+               BlueprintName = 'SwiftyJSON'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'WCLShineButton.framework'>
+               BuildableName = 'SwiftyJSON.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -31,12 +31,11 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet fileprivate weak var noteImage: UIImageView!
     
     fileprivate let locationManager = CLLocationManager()
-    fileprivate var latitude: Double = 0.0
-    fileprivate var longitude: Double = 0.0
+    fileprivate var latitude: String?
+    fileprivate var longitude: String?
     
     internal var nowPlayingInfo:[String:Any] = [:]
     
-    //TODO: WRITE UUID IN PLIST
     fileprivate var uuid: String?
     
     override func viewDidLoad() {
@@ -118,6 +117,13 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         progressiveView.animate(toAngle: 360, duration: 1.5) { [weak self] (complete) in
             guard let strongSelf = self else { return }
             
+            let player = MPMusicPlayerController()
+            guard let _ = player.nowPlayingItem else {
+                strongSelf.progressiveView.angle = 0
+                strongSelf.shareButton.isEnabled = true
+                return
+            }
+            
             strongSelf.fetchMP3Info()
             strongSelf.writeLocation()
             strongSelf.sendData()
@@ -135,19 +141,20 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         nowPlayingInfo["favorite"] = false
         
         if let image = playerItem?.artwork?.image(at: CGSize(width: 70, height: 70)) {
-            nowPlayingInfo["image"] = image
+            let imageData: Data = UIImagePNGRepresentation(image)!
+            let imageBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+            nowPlayingInfo["image"] = imageBase64
         }
         
         if let artist = playerItem?.artist {
             nowPlayingInfo["artist"] = artist
         }
         
-        if let title = playerItem?.title {
-            nowPlayingInfo["title"] = title
+        if let name = playerItem?.title {
+            nowPlayingInfo["name"] = name
         }
         
     }
-    
     
     fileprivate func writeLocation() {
         nowPlayingInfo["latitude"] = self.latitude
@@ -157,12 +164,29 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
+        
+        self.latitude = String(format: "%f", location.coordinate.latitude)
+        self.longitude = String(format: "%f", location.coordinate.longitude)
     }
     
-    //TODO: IMPLEMENT FOR SEND TRACK DATA
     fileprivate func sendData() {
         
+        let name = nowPlayingInfo["name"] as? String
+        let artist = nowPlayingInfo["artist"] as? String
+        
+        let image: String?
+        if let trackImage = nowPlayingInfo["image"] as? String {
+            image = trackImage
+        } else {
+            image = ""
+        }
+        
+        let longitude = nowPlayingInfo["longitude"] as? String
+        let latitude = nowPlayingInfo["latitude"] as? String
+        
+        let track = Track(name: name!, artist: artist!, image: image, longitude: "\(longitude!)", latitude: "\(latitude!)")
+        SessionController.sendTrack(track: track)
+        
+        nowPlayingInfo.removeAll()
     }
 }
