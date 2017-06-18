@@ -79,12 +79,13 @@ extension MusicListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableCell
         let track = tracks[indexPath.row]
-        //TODO: CONFIGURE CELL
-        //TODO: Configure like button
-        //cell.imageView?.image = UIImage(named: "default_placeholder")
+
         let dataDecoded : Data = Data(base64Encoded: track.image!, options: .ignoreUnknownCharacters)!
-        let image = UIImage(data: dataDecoded)
-        cell.trackImage?.image = image
+        if let image = UIImage(data: dataDecoded) {
+            cell.trackImage?.image = image
+        } else {
+            cell.trackImage?.image = UIImage(named: "default_placeholder")
+        }
         
         cell.authorLabel.text = track.artist
         cell.trackNameLabel.text = track.name
