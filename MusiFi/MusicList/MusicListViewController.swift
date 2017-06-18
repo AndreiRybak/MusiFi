@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MusicListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!

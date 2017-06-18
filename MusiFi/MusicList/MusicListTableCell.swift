@@ -61,10 +61,13 @@ class MusicListTableCell: UITableViewCell {
             
             let track = NSManagedObject(entity: entity, insertInto: managedContext)
             
+            let imageData: Data = UIImagePNGRepresentation(self.trackImage.image!)!
+            let imageBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+            
+            track.setValue(imageBase64, forKey: "image")
             track.setValue(self.trackNameLabel.text, forKey: "name")
             track.setValue(self.authorLabel.text, forKey: "artist")
-            //track.setValue(self.imageView?.image, forKey: "image")
-            
+        
             do {
                 try managedContext.save()
             } catch let error as NSError {

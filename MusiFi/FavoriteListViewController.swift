@@ -87,18 +87,24 @@ extension FavoriteListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteListCell", for: indexPath) as! FavoriteListTableCell
         let track = tracks[indexPath.row]
-        //TODO: CONFIGURE CELL
-        cell.imageView?.image = UIImage(named: "default_placeholder")
+
+        let dataDecoded : Data = Data(base64Encoded: track.value(forKey: "image") as! String, options: .ignoreUnknownCharacters)!
+        if let image = UIImage(data: dataDecoded) {
+            cell.trackImage?.image = image
+        } else {
+            cell.trackImage?.image = UIImage(named: "default_placeholder")
+        }
+        
         cell.authorLabel.text = track.value(forKey: "artist") as? String
         cell.trackNameLabel.text = track.value(forKey: "name") as? String
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    //TODO: UPDATE FAVORITE TRACK ON THE SERVER
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteFavoriteTrack(track: tracks[indexPath.row] as! FavoriteTrack)
