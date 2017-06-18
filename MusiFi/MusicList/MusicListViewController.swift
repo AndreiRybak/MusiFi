@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MusicListViewController: UIViewController, UITableViewDelegate {
     
@@ -89,7 +90,39 @@ extension MusicListViewController: UITableViewDataSource {
         cell.authorLabel.text = track.artist
         cell.trackNameLabel.text = track.name
         
+        if isCurrentlyAdded(name: track.name, artist: track.artist) == true {
+            cell.likeButton?.isSelected = true
+        } else {
+            cell.likeButton?.isSelected = false
+
+        }
+        
         return cell
+    }
+    
+    fileprivate func isCurrentlyAdded(name: String, artist: String) -> Bool {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return true }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        var currentTracks: [NSManagedObject] = []
+        
+        let namePredicate = NSPredicate(format:"name == %@", name)
+        let artistPredicate = NSPredicate(format:"artist == %@", artist)
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteTrack")
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [namePredicate, artistPredicate])
+        
+        fetchRequest.predicate = compoundPredicate
+        
+        do {
+            currentTracks = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        return currentTracks.count == 0 ? false : true
     }
     
 }

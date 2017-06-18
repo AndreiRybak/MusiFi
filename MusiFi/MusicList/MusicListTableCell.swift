@@ -46,7 +46,7 @@ class MusicListTableCell: UITableViewCell {
         
         likeButton?.fillColor = UIColor(red: 219/255, green: 87/255, blue: 90/255, alpha: 1)
         likeButton?.color = UIColor.white
-        
+
         likeView.addSubview(likeButton!)
     }
     
@@ -76,8 +76,6 @@ class MusicListTableCell: UITableViewCell {
         }
     }
     
-    
-    //TODO: DISABLE BUTTON WHEN FIELD isFavorite == TRUE
     fileprivate func isCurrentlyAdded() -> Bool {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return true }
