@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MusicListViewController: UIViewController, UITableViewDelegate, UISearchResultsUpdating {
+class MusicListViewController: UIViewController, UITableViewDelegate, UISearchResultsUpdating, UIActionSheetDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,6 +39,7 @@ class MusicListViewController: UIViewController, UITableViewDelegate, UISearchRe
         
         addMyFavoriteButton()
         setupSearchBar()
+        setupSortButton()
     }
     
     fileprivate func setupSearchBar() {
@@ -61,6 +62,46 @@ class MusicListViewController: UIViewController, UITableViewDelegate, UISearchRe
         let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = Colors.orange
 
+    }
+    
+    fileprivate func setupSortButton() {
+        let sortButton = UIBarButtonItem(image: UIImage(named:"sort_icon"), style: .plain, target: self, action: #selector(showSortActions))
+        sortButton.imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 0)
+        sortButton.tintColor = Colors.orange
+        self.navigationItem.leftBarButtonItem = sortButton
+    }
+    
+    @objc fileprivate func showSortActions() {
+        let optionMenu = UIAlertController(title: nil, message: "Choose sorting option", preferredStyle: .actionSheet)
+        optionMenu.view.tintColor = Colors.orange
+        
+        
+        let subview = optionMenu.view.subviews.first! as UIView
+        let alertContentView = subview.subviews.first! as UIView
+        let items = alertContentView.subviews.first! as UIView
+        items.backgroundColor = Colors.gray
+        
+        let bySongName = UIAlertAction(title: "Sor by song name", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.tracks = self.tracks.sorted(by: { $0.name < $1.name })
+            self.tableView.reloadData()
+        })
+        
+        let bySongArtist = UIAlertAction(title: "Sor by artist name", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.tracks = self.tracks.sorted(by: { $0.artist < $1.artist })
+            self.tableView.reloadData()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        optionMenu.addAction(bySongName)
+        optionMenu.addAction(bySongArtist)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
