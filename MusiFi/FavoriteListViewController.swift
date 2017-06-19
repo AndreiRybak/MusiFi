@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FavoriteListViewController: UIViewController {
+class FavoriteListViewController: UIViewController, UISearchResultsUpdating {
 
     fileprivate struct NibName {
         static let cellNibName = "FavoriteListTableCell"
@@ -19,6 +19,9 @@ class FavoriteListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate var tracks: [NSManagedObject] = []
+    fileprivate var filteredTracks: [NSManagedObject] = []
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,29 @@ class FavoriteListViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = Colors.orange
         
         fetchTracks()
+        setupSearchBar()
+    }
+    
+    fileprivate func setupSearchBar() {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchBar.backgroundColor = Colors.dark
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.tintColor = Colors.orange
+        
+        let backView = UIView(frame: tableView.bounds)
+        backView.backgroundColor = Colors.dark
+        self.tableView.backgroundView = backView
+        
+        tableView.backgroundView?.backgroundColor = Colors.dark
+        tableView.tableHeaderView?.backgroundColor = Colors.dark
+        
+        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = Colors.orange
+        
     }
     
     fileprivate func fetchTracks() {
@@ -77,6 +103,20 @@ class FavoriteListViewController: UIViewController {
             fatalError("Failure to save context: \(error)")
         }
     }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredTracks = tracks.filter { track in
+            let searchString = searchText.lowercased()
+            return ((track.value(forKey: "name") as? String)!).lowercased().contains(searchString) ||
+                   ((track.value(forKey: "artist") as? String)!).lowercased().contains(searchString)
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
 }
 
 extension FavoriteListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -87,12 +127,22 @@ extension FavoriteListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return tracks.count
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredTracks.count
+        } else {
+            return tracks.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteListCell", for: indexPath) as! FavoriteListTableCell
-        let track = tracks[indexPath.row]
+        let track: NSManagedObject
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            track = filteredTracks[indexPath.row]
+        } else {
+            track = tracks[indexPath.row]
+        }
 
         let dataDecoded : Data = Data(base64Encoded: track.value(forKey: "image") as! String, options: .ignoreUnknownCharacters)!
         if let image = UIImage(data: dataDecoded) {
@@ -115,6 +165,9 @@ extension FavoriteListViewController: UITableViewDelegate, UITableViewDataSource
         if editingStyle == .delete {
             deleteFavoriteTrack(track: tracks[indexPath.row] as! FavoriteTrack)
             tracks.remove(at: indexPath.row)
+            if filteredTracks.count > 0 {
+               filteredTracks.remove(at: indexPath.row)
+            }
             tableView.deleteRows(at: [indexPath], with: .none)
         }
     }
