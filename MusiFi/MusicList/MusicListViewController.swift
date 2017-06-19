@@ -9,11 +9,14 @@
 import UIKit
 import CoreData
 
-class MusicListViewController: UIViewController, UITableViewDelegate {
+class MusicListViewController: UIViewController, UITableViewDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate var tracks: Array<Track> = []
+    fileprivate var filteredTracks: Array<Track> = []
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     fileprivate struct Constants {
         static let cellNibName = "MusicListTableCell"
@@ -35,13 +38,34 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         addMyFavoriteButton()
-        
+        setupSearchBar()
     }
     
+    fileprivate func setupSearchBar() {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchBar.backgroundColor = Colors.dark
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.tintColor = Colors.orange
+        
+        let backView = UIView(frame: tableView.bounds)
+        backView.backgroundColor = Colors.dark
+        self.tableView.backgroundView = backView
+        
+        tableView.backgroundView?.backgroundColor = Colors.dark
+        tableView.tableHeaderView?.backgroundColor = Colors.dark
+        
+        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = Colors.orange
+
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       SessionController.getTracks { [weak self] (tracks) in
+        SessionController.getTracks { [weak self] (tracks) in
             guard let strongSelf = self else { return }
             strongSelf.tracks = tracks
             strongSelf.tableView.reloadData()
@@ -64,6 +88,20 @@ class MusicListViewController: UIViewController, UITableViewDelegate {
         self.navigationController?.show(favoriteVC, sender: self)
 
     }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredTracks = tracks.filter { track in
+            let searchString = searchText.lowercased()
+            return track.name.lowercased().contains(searchString) ||
+                    track.artist.lowercased().contains(searchString)
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
 }
 
 extension MusicListViewController: UITableViewDataSource {
@@ -73,13 +111,23 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tracks.count
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredTracks.count
+        } else {
+            return tracks.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableCell
-        let track = tracks[indexPath.row]
-
+        let track: Track
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            track = filteredTracks[indexPath.row]
+        } else {
+            track = tracks[indexPath.row]
+        }
+        
         let dataDecoded : Data = Data(base64Encoded: track.image!, options: .ignoreUnknownCharacters)!
         if let image = UIImage(data: dataDecoded) {
             cell.trackImage?.image = image
@@ -121,7 +169,7 @@ extension MusicListViewController: UITableViewDataSource {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
+
         return currentTracks.count == 0 ? false : true
     }
     

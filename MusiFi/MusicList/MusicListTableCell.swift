@@ -73,6 +73,12 @@ class MusicListTableCell: UITableViewCell {
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
+            
+            do {
+                try managedContext.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
+            }
         }
         
         if likeButton?.isSelected == true {
@@ -94,7 +100,12 @@ class MusicListTableCell: UITableViewCell {
                     }
                 }
             }
-
+            
+            do {
+                try managedContext.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
+            }
         }
     }
     

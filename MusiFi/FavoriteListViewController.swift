@@ -70,6 +70,12 @@ class FavoriteListViewController: UIViewController {
                 }
             }
         }
+        
+        do {
+            try managedContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
     }
 }
 
