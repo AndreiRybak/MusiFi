@@ -36,6 +36,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     
     internal var nowPlayingInfo:[String:Any] = [:]
     
+    fileprivate var previosPlayingItem: MPMediaItem? = nil
+    
     fileprivate var uuid: String?
     
     override func viewDidLoad() {
@@ -118,11 +120,12 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
             guard let strongSelf = self else { return }
             
             let player = MPMusicPlayerController()
-            guard let _ = player.nowPlayingItem else {
+            guard (player.nowPlayingItem != nil) && (player.nowPlayingItem != strongSelf.previosPlayingItem) else {
                 strongSelf.progressiveView.angle = 0
                 strongSelf.shareButton.isEnabled = true
                 return
             }
+            strongSelf.previosPlayingItem = player.nowPlayingItem
             
             strongSelf.fetchMP3Info()
             strongSelf.writeLocation()
