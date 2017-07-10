@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07B086541EC4D88D005FCFC4 /* FavoriteListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */; };
-		07B086561EC4D91C005FCFC4 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */; };
-		07B086581EC4D980005FCFC4 /* FavoriteListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */; };
-		07B0865A1EC60B67005FCFC4 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B086591EC60B67005FCFC4 /* Track.swift */; };
+		07161EA61F13C4D5007A4076 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07161EA51F13C4D5007A4076 /* Track.swift */; };
+		07161EAB1F13C4F5007A4076 /* FavoriteListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07161EA81F13C4F5007A4076 /* FavoriteListTableCell.swift */; };
+		07161EAC1F13C4F5007A4076 /* FavoriteListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07161EA91F13C4F5007A4076 /* FavoriteListTableCell.xib */; };
+		07161EAD1F13C4F5007A4076 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07161EAA1F13C4F5007A4076 /* FavoriteListViewController.swift */; };
+		07161EB01F13C508007A4076 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07161EAF1F13C508007A4076 /* ShareViewController.swift */; };
 		07B0867F1EC60F37005FCFC4 /* MusiFi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07B0867D1EC60F37005FCFC4 /* MusiFi.xcdatamodeld */; };
 		07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */; };
 		07D539E21E88F60C00BF6C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E01E88F60C00BF6C1C /* Main.storyboard */; };
 		07D539E41E88F60C00BF6C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E31E88F60C00BF6C1C /* Assets.xcassets */; };
 		07D539E71E88F60C00BF6C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D539E51E88F60C00BF6C1C /* LaunchScreen.storyboard */; };
-		07E5BCA81E88FF1F00292EE4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA31E88FF1F00292EE4 /* ShareViewController.swift */; };
 		07E5BCA91E88FF1F00292EE4 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA51E88FF1F00292EE4 /* MusicListViewController.swift */; };
 		07E5BCAA1E88FF1F00292EE4 /* MusicMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCA71E88FF1F00292EE4 /* MusicMapViewController.swift */; };
 		07E5BCAD1E89049C00292EE4 /* MusicListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E5BCAB1E89049C00292EE4 /* MusicListTableCell.swift */; };
@@ -28,10 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteListTableCell.xib; sourceTree = "<group>"; };
-		07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
-		07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListTableCell.swift; sourceTree = "<group>"; };
-		07B086591EC60B67005FCFC4 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		07161EA51F13C4D5007A4076 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		07161EA81F13C4F5007A4076 /* FavoriteListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListTableCell.swift; sourceTree = "<group>"; };
+		07161EA91F13C4F5007A4076 /* FavoriteListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteListTableCell.xib; sourceTree = "<group>"; };
+		07161EAA1F13C4F5007A4076 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		07161EAF1F13C508007A4076 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		07B0867E1EC60F37005FCFC4 /* MusiFi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusiFi.xcdatamodel; sourceTree = "<group>"; };
 		07D539D91E88F60C00BF6C1C /* MusiFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusiFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		07D539E31E88F60C00BF6C1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07D539E61E88F60C00BF6C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07D539E81E88F60C00BF6C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07E5BCA31E88FF1F00292EE4 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		07E5BCA51E88FF1F00292EE4 /* MusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		07E5BCA71E88FF1F00292EE4 /* MusicMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicMapViewController.swift; sourceTree = "<group>"; };
 		07E5BCAB1E89049C00292EE4 /* MusicListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListTableCell.swift; sourceTree = "<group>"; };
@@ -66,14 +66,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07B086501EC4D7F6005FCFC4 /* FavoriteList */ = {
+		07161EA41F13C4D5007A4076 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				07B086551EC4D91C005FCFC4 /* FavoriteListViewController.swift */,
-				07B086571EC4D980005FCFC4 /* FavoriteListTableCell.swift */,
-				07B086531EC4D88D005FCFC4 /* FavoriteListTableCell.xib */,
+				07161EA51F13C4D5007A4076 /* Track.swift */,
 			);
-			name = FavoriteList;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07161EA71F13C4F5007A4076 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				07161EA81F13C4F5007A4076 /* FavoriteListTableCell.swift */,
+				07161EA91F13C4F5007A4076 /* FavoriteListTableCell.xib */,
+				07161EAA1F13C4F5007A4076 /* FavoriteListViewController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		07161EAE1F13C508007A4076 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				07161EAF1F13C508007A4076 /* ShareViewController.swift */,
+			);
+			path = Sharing;
 			sourceTree = "<group>";
 		};
 		07D539D01E88F60B00BF6C1C = {
@@ -97,11 +113,11 @@
 		07D539DB1E88F60C00BF6C1C /* MusiFi */ = {
 			isa = PBXGroup;
 			children = (
-				07B086591EC60B67005FCFC4 /* Track.swift */,
-				07E5BCA21E88FF1F00292EE4 /* ShareScreen */,
+				07161EA41F13C4D5007A4076 /* Model */,
+				07161EAE1F13C508007A4076 /* Sharing */,
 				07E5BCA61E88FF1F00292EE4 /* MusicMap */,
 				07E5BCA41E88FF1F00292EE4 /* MusicList */,
-				07B086501EC4D7F6005FCFC4 /* FavoriteList */,
+				07161EA71F13C4F5007A4076 /* Favorite */,
 				07D539DC1E88F60C00BF6C1C /* AppDelegate.swift */,
 				07E5BCAF1E89113800292EE4 /* SessionController.swift */,
 				07D539E01E88F60C00BF6C1C /* Main.storyboard */,
@@ -111,15 +127,6 @@
 				07B0867D1EC60F37005FCFC4 /* MusiFi.xcdatamodeld */,
 			);
 			path = MusiFi;
-			sourceTree = "<group>";
-		};
-		07E5BCA21E88FF1F00292EE4 /* ShareScreen */ = {
-			isa = PBXGroup;
-			children = (
-				07E5BCA31E88FF1F00292EE4 /* ShareViewController.swift */,
-			);
-			name = ShareScreen;
-			path = HomePlayer;
 			sourceTree = "<group>";
 		};
 		07E5BCA41E88FF1F00292EE4 /* MusicList */ = {
@@ -223,9 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E5BCAE1E89049C00292EE4 /* MusicListTableCell.xib in Resources */,
-				07B086541EC4D88D005FCFC4 /* FavoriteListTableCell.xib in Resources */,
 				07D539E71E88F60C00BF6C1C /* LaunchScreen.storyboard in Resources */,
 				07D539E41E88F60C00BF6C1C /* Assets.xcassets in Resources */,
+				07161EAC1F13C4F5007A4076 /* FavoriteListTableCell.xib in Resources */,
 				07D539E21E88F60C00BF6C1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,16 +292,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E5BCA81E88FF1F00292EE4 /* ShareViewController.swift in Sources */,
-				07B086581EC4D980005FCFC4 /* FavoriteListTableCell.swift in Sources */,
+				07161EA61F13C4D5007A4076 /* Track.swift in Sources */,
 				07E5BCAA1E88FF1F00292EE4 /* MusicMapViewController.swift in Sources */,
+				07161EB01F13C508007A4076 /* ShareViewController.swift in Sources */,
+				07161EAD1F13C4F5007A4076 /* FavoriteListViewController.swift in Sources */,
+				07161EAB1F13C4F5007A4076 /* FavoriteListTableCell.swift in Sources */,
 				07D539DD1E88F60C00BF6C1C /* AppDelegate.swift in Sources */,
 				07B0867F1EC60F37005FCFC4 /* MusiFi.xcdatamodeld in Sources */,
-				07B086561EC4D91C005FCFC4 /* FavoriteListViewController.swift in Sources */,
 				07E5BCAD1E89049C00292EE4 /* MusicListTableCell.swift in Sources */,
 				07E5BCB01E89113800292EE4 /* SessionController.swift in Sources */,
 				07E5BCA91E88FF1F00292EE4 /* MusicListViewController.swift in Sources */,
-				07B0865A1EC60B67005FCFC4 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
